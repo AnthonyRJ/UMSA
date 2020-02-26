@@ -16,6 +16,7 @@
         app:srcCompat="@drawable/icone"/>
 
     <EditText
+        android:id="@+id/editText_usernameLogin"
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
@@ -24,6 +25,7 @@
         android:textAlignment="center" />
 
     <EditText
+        android:id="@+id/editText_passwordLogin"
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -32,6 +34,7 @@
         android:textAlignment="center" />
     
     <Button
+        android:id="@+id/button_connection"
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
@@ -43,6 +46,7 @@
         android:orientation="horizontal"/>
 
         <TextView
+            android:id="@+id/textView_registration"
             android:layout_width="wrap_content"
             android:layout_height="35dp"
             android:layout_marginTop="10dp"
