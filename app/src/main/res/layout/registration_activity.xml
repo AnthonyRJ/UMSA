@@ -18,7 +18,7 @@
         android:id="@+id/editText_usernameRegister"
         android:layout_width="180dp"
         android:layout_height="40dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="40dp"
         android:hint="@string/username"
         android:background="#ffffff"
         android:textAlignment="center" />

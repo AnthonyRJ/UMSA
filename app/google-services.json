@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "461163697074",
+    "firebase_url": "https://umsa-97136.firebaseio.com",
+    "project_id": "umsa-97136",
+    "storage_bucket": "umsa-97136.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:461163697074:android:3253f87eb0473995690aab",
+        "android_client_info": {
+          "package_name": "com.example.projetpasswordmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "461163697074-lmu8p8h5aiavuoca2en5m61mdb42d5k5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArLFBAIPzoOeoUCR102FS-jOfJwQWRc0k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "461163697074-lmu8p8h5aiavuoca2en5m61mdb42d5k5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
