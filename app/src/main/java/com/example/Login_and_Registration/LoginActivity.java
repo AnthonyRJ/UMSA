@@ -24,7 +24,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
 
-        db = new Database(this);
+        /*db = new Database(this);
 
         usernameLogin = (EditText) findViewById(R.id.editText_usernameLogin);
         passwordLogin = (EditText) findViewById(R.id.editText_passwordLogin);
@@ -60,6 +60,6 @@ public class LoginActivity extends AppCompatActivity {
                     Toast.makeText(LoginActivity.this, "Erreur : nom utilisateur/mot de passe incorrect", Toast.LENGTH_LONG).show();
                 }
             }
-        });
+        });*/
     }
 }
