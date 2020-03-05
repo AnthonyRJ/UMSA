@@ -15,33 +15,13 @@
         app:srcCompat="@drawable/icone" />
 
     <EditText
-        android:id="@+id/editText_usernameRegister"
-        android:layout_width="295dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="40dp"
-        android:background="#ffffff"
-        android:hint="@string/username"
-        android:inputType="text"
-        android:textAlignment="center" />
-
-    <EditText
         android:id="@+id/editText_emailRegister"
         android:layout_width="295dp"
         android:layout_height="40dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="90dp"
         android:background="#ffffff"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
-        android:textAlignment="center" />
-
-    <EditText
-        android:id="@+id/editText_phoneRegister"
-        android:layout_width="290dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:background="#ffffff"
-        android:hint="@string/phone"
-        android:inputType="phone"
         android:textAlignment="center" />
 
     <EditText

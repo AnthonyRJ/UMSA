@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "461163697074",
-    "firebase_url": "https://umsa-97136.firebaseio.com",
-    "project_id": "umsa-97136",
-    "storage_bucket": "umsa-97136.appspot.com"
+    "project_number": "434158257064",
+    "firebase_url": "https://umsa-bd1c2.firebaseio.com",
+    "project_id": "umsa-bd1c2",
+    "storage_bucket": "umsa-bd1c2.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:461163697074:android:3253f87eb0473995690aab",
+        "mobilesdk_app_id": "1:434158257064:android:b56e19801b7c948790139d",
         "android_client_info": {
           "package_name": "com.example.projetpasswordmanager"
         }
       },
       "oauth_client": [
         {
-          "client_id": "461163697074-ahit6b2dkmg6k1c9fdhv45iea83ph7hu.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.projetpasswordmanager",
-            "certificate_hash": "e84160f3abbbbf71c592fb8394d14d6e4ef7054d"
-          }
-        },
-        {
-          "client_id": "461163697074-lmu8p8h5aiavuoca2en5m61mdb42d5k5.apps.googleusercontent.com",
+          "client_id": "434158257064-jndtpbuepkd2471l3r2due8mdk1ctvhj.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyArLFBAIPzoOeoUCR102FS-jOfJwQWRc0k"
+          "current_key": "AIzaSyB4o4Ep7NGJKZ4Ih4Pc1ueqEONCLgAJzvg"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "461163697074-lmu8p8h5aiavuoca2en5m61mdb42d5k5.apps.googleusercontent.com",
+              "client_id": "434158257064-jndtpbuepkd2471l3r2due8mdk1ctvhj.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

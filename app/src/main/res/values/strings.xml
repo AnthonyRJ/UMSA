@@ -13,5 +13,6 @@
     <string name="phone">NUMERO DE TELEPHONE</string>
     <string name="register">INSCRIPTION</string>
     <string name="bienvenue">Bienvenue</string>
+    <string name="logout">Se deconnecter</string>
 
 </resources>
