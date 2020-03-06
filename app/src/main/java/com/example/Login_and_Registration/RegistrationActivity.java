@@ -43,6 +43,8 @@ public class RegistrationActivity extends AppCompatActivity {
         connection = (TextView) findViewById(R.id.textView_login);
         progressBarRegister = (ProgressBar) findViewById(R.id.progressBarRegister);
 
+        progressBarRegister.setVisibility(View.INVISIBLE);
+
         //On ouvre le layout de connexion quand on appuie dessus
         connection.setOnClickListener(new View.OnClickListener(){
 
@@ -75,18 +77,24 @@ public class RegistrationActivity extends AppCompatActivity {
                     confirmPassword.requestFocus();
                 } else if (email.isEmpty() && pwd.isEmpty() && confPwd.isEmpty()) {
                     Toast.makeText(RegistrationActivity.this, "Veuillez renseigner les champs", Toast.LENGTH_LONG).show();
-                } else if (!(email.isEmpty() && pwd.isEmpty() && confPwd.isEmpty()) && pwd.equals(confPwd)) {
-                    fireBaseBD.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(RegistrationActivity.this, "Echec de l'inscription", Toast.LENGTH_LONG).show();
-                            } else {
-                                startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+                } else {
+                    if(pwd.equals(confPwd)){
+                        fireBaseBD.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(RegistrationActivity.this, "Echec de l'inscription", Toast.LENGTH_LONG).show();
+                                } else {
+                                    startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
+                                }
                             }
-                        }
-                    });
+                        });
+                    }
+                    else{
+                        Toast.makeText(RegistrationActivity.this, "Votre confirmation de mdp est incorrecte", Toast.LENGTH_LONG).show();
+                    }
                 }
+                progressBarRegister.setVisibility(View.INVISIBLE);
             }
         });
     }

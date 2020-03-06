@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                 else if(email.isEmpty() && pwd.isEmpty()){
                     Toast.makeText(LoginActivity.this, "Veuillez renseigner les champs", Toast.LENGTH_LONG).show();
                 }
-                else if(!email.isEmpty() && !pwd.isEmpty()) {
+                else {
                     fireBaseBD.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
@@ -102,6 +102,6 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onStart(){
         super.onStart();
-        FirebaseUser currentUser = fireBaseBD.getCurrentUser();
+        fireBaseBD.addAuthStateListener(StateListener);
     }
 }
