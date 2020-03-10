@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,9 +15,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class RegistrationActivity extends AppCompatActivity {
@@ -28,6 +36,7 @@ public class RegistrationActivity extends AppCompatActivity {
     TextView connection;
     FirebaseAuth fireBaseBD;
     ProgressBar progressBarRegister;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -77,23 +86,25 @@ public class RegistrationActivity extends AppCompatActivity {
                     confirmPassword.requestFocus();
                 } else if (email.isEmpty() && pwd.isEmpty() && confPwd.isEmpty()) {
                     Toast.makeText(RegistrationActivity.this, "Veuillez renseigner les champs", Toast.LENGTH_LONG).show();
-                } else {
-                    if(pwd.equals(confPwd)){
-                        fireBaseBD.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(RegistrationActivity.this, new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (!task.isSuccessful()) {
-                                    Toast.makeText(RegistrationActivity.this, "Echec de l'inscription", Toast.LENGTH_LONG).show();
-                                } else {
-                                    startActivity(new Intent(RegistrationActivity.this, LoginActivity.class));
-                                }
-                            }
-                        });
-                    }
-                    else{
-                        Toast.makeText(RegistrationActivity.this, "Votre confirmation de mdp est incorrecte", Toast.LENGTH_LONG).show();
-                    }
                 }
+                else if(!pwd.equals(confPwd)){
+                    Toast.makeText(RegistrationActivity.this, "Votre confirmation de mdp est incorrecte", Toast.LENGTH_LONG).show();
+                }else {
+
+                    fireBaseBD.createUserWithEmailAndPassword(email, pwd);
+
+                    //L'id du user qui vient de crée son compte
+                    String id = fireBaseBD.getCurrentUser().getUid();
+
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("userID", id);
+
+                    if(id != null){
+                        db.collection("userID").add(data);
+                    }
+
+                }
+
                 progressBarRegister.setVisibility(View.INVISIBLE);
             }
         });
