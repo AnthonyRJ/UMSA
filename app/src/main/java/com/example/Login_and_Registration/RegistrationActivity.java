@@ -20,6 +20,7 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -36,7 +37,7 @@ public class RegistrationActivity extends AppCompatActivity {
     TextView connection;
     FirebaseAuth fireBaseBD;
     ProgressBar progressBarRegister;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    //FirebaseFirestore db = FirebaseFirestore.getInstance();
 
 
     @Override
@@ -59,6 +60,7 @@ public class RegistrationActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
+
                 Intent moveToLogin = new Intent(RegistrationActivity.this, LoginActivity.class);
                 startActivity(moveToLogin);
             }
@@ -67,7 +69,7 @@ public class RegistrationActivity extends AppCompatActivity {
         register.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {
+                public void onClick(View v) {
                 //trim() enleve les espaces au debut et à la fin
                 String email = emailRegister.getText().toString().trim();
                 String pwd = passwordRegister.getText().toString().trim();
@@ -89,21 +91,9 @@ public class RegistrationActivity extends AppCompatActivity {
                 }
                 else if(!pwd.equals(confPwd)){
                     Toast.makeText(RegistrationActivity.this, "Votre confirmation de mdp est incorrecte", Toast.LENGTH_LONG).show();
-                }else {
-
-                    fireBaseBD.createUserWithEmailAndPassword(email, pwd);
-
-                    //L'id du user qui vient de crée son compte
-                    String id = fireBaseBD.getCurrentUser().getUid();
-
-                    Map<String, Object> data = new HashMap<>();
-                    data.put("userID", id);
-
-                    if(id != null){
-                        db.collection("userID").add(data);
-                    }
-
                 }
+
+                fireBaseBD.createUserWithEmailAndPassword(email, pwd);
 
                 progressBarRegister.setVisibility(View.INVISIBLE);
             }

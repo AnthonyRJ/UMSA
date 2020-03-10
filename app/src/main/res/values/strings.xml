@@ -13,5 +13,6 @@
     <string name="register">INSCRIPTION</string>
     <string name="bienvenue">Bienvenue</string>
     <string name="logout">Se déconnecter</string>
+    <string name="test">test</string>
 
 </resources>
