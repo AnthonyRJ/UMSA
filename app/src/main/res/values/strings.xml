@@ -12,7 +12,9 @@
     <string name="phone">NUMERO DE TELEPHONE</string>
     <string name="register">INSCRIPTION</string>
     <string name="bienvenue">Bienvenue</string>
-    <string name="logout">Se déconnecter</string>
+    <string name="logout">Deconnexion</string>
     <string name="test">test</string>
+    <string name="coverNewApp">"Ajout d'une nouvelle application"</string>
+    <string name="newAppliName">nom de l\'appli</string>
 
 </resources>
