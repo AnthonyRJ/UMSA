@@ -70,7 +70,7 @@ public class AccueilActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent moveToAccountCreation = new Intent(AccueilActivity.this, AccountCreationActivity.class);
+                Intent moveToAccountCreation = new Intent(AccueilActivity.this, AppCreationActivity.class);
                 startActivity(moveToAccountCreation);
             }
         });

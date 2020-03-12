@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/umsa_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".LogInfoActivity"></activity>
+        <activity android:name=".AccountListActivity"></activity>
+        <activity android:name=".LogInfoActivity" />
         <activity
             android:name=".BiometricVerifActivity"
             android:screenOrientation="portrait"
@@ -24,7 +25,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AccountCreationActivity"
+            android:name=".AppCreationActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
@@ -38,7 +39,7 @@
         <activity
             android:name=".LoginActivity"
             android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity"></activity>
+            tools:ignore="LockedOrientationActivity" />
     </application>
 
 </manifest>
