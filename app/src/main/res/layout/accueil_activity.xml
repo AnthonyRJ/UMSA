@@ -18,13 +18,33 @@
         android:text="@string/bienvenue"
         android:textSize="30sp" />
 
+    <ScrollView
+        android:id="@+id/scrollView_app"
+        android:layout_width="match_parent"
+        android:layout_height="286dp"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
     <Button
-        android:id="@+id/button_createAccount"
+        android:id="@+id/button_reload"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
         android:textSize="15sp"
-        android:layout_marginTop="400dp"
-        android:text="Ajouter une application" />
+        android:layout_marginTop="50dp"
+        android:text="@string/reload" />
+
+    <Button
+        android:id="@+id/button_createApp"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:textSize="15sp"
+        android:layout_marginTop="10dp"
+        android:text="@string/addNewAppInDatabase" />
 
     <Button
         android:id="@+id/button_loggout"
@@ -33,5 +53,7 @@
         android:textSize="15sp"
         android:layout_marginTop="10dp"
         android:text="@string/logout" />
+
+
 
 </LinearLayout>

@@ -16,5 +16,8 @@
     <string name="test">test</string>
     <string name="coverNewApp">"Ajout d'une nouvelle application"</string>
     <string name="newAppliName">nom de l\'appli</string>
+    <string name="addNewAppInDatabase">Ajouter une application</string>
+    <string name="addAppInData">ajouter</string>
+    <string name="reload">actualiser</string>
 
 </resources>
