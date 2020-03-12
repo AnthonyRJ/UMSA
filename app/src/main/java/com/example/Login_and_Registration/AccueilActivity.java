@@ -105,6 +105,7 @@ public class AccueilActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        return;
+        Intent intent = new Intent(AccueilActivity.this, AccountListActivity.class);
+        startActivity(intent);
     }
 }
