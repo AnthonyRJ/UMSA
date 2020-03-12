@@ -41,9 +41,8 @@ public class AccountListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account_list);
 
 
-       // Intent i = getIntent();
-       // String appName = i.getExtras().getString("IdApplication");
-        appName = "facebook";
+        Intent i = getIntent();
+        appName = i.getStringExtra("IdApplication");
         db = FirebaseFirestore.getInstance();
         auth = FirebaseAuth.getInstance();
         r1 = (RelativeLayout)findViewById(R.id.r1);
@@ -68,7 +67,9 @@ public class AccountListActivity extends AppCompatActivity {
                             String currentUID = auth.getCurrentUser().getUid();
                             String UIDTested = (String) ds.get("userID");
                             String AppIDTested = (String) ds.get("Applications");
-                            if(UIDTested.equals(currentUID) && AppIDTested.contains(appName)) {
+                            String[] tmpStringArray = AppIDTested.split("_");
+                            String AppNameTested = tmpStringArray[0].toLowerCase();
+                            if(UIDTested.equals(currentUID) && AppNameTested.equals(appName.toLowerCase())) {
                                 logTmp = (String) ds.get("Pseudo");
                                 passTmp = (String) ds.get("mdp");
                                 Button b = new Button(context);
@@ -76,12 +77,16 @@ public class AccountListActivity extends AppCompatActivity {
                                     @Override
                                     public void onClick(View v) {
                                         Intent intent = new Intent(AccountListActivity.this, LogInfoActivity.class);
-                                        intent.putExtra("Pseudo", logTmp);
-                                        intent.putExtra("mdp", passTmp);
+                                        String log = logTmp;
+                                        String pass = passTmp;
+                                        String app = appName;
+                                        intent.putExtra("Pseudo", log);
+                                        intent.putExtra("mdp", pass);
+                                        intent.putExtra("AppUID", app);
                                         startActivity(intent);
                                     }
                                 });
-                                b.setText((String) ds.get("Pseudo"));
+                                b.setText((String) ds.get("Pseudo") + "//" + AppNameTested + appName);
                                 ll.addView(b);
                             }
                         }
