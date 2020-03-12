@@ -27,7 +27,8 @@
         android:layout_marginTop="50dp"
         android:hint="@string/newAppliName"
         android:background="#ffffff"
-        android:textAlignment="center">
+        android:textAlignment="center"
+        android:textColor="@color/purpleColor">
     </EditText>
 
     <Button

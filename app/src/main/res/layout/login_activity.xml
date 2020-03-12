@@ -23,7 +23,8 @@
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:background="#ffffff"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/purpleColor"/>
 
     <EditText
         android:id="@+id/editText_passwordLogin"
@@ -33,7 +34,8 @@
         android:hint="@string/password"
         android:background="#ffffff"
         android:inputType="textPassword"
-        android:textAlignment="center" />
+        android:textAlignment="center"
+        android:textColor="@color/purpleColor"/>
     
     <Button
         android:id="@+id/button_connection"

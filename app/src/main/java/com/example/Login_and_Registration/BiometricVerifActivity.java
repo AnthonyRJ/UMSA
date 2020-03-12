@@ -34,15 +34,15 @@ public class BiometricVerifActivity extends AppCompatActivity {
             keyguardManager = (KeyguardManager) getSystemService(KEYGUARD_SERVICE);
 
             if(!fingerprintManager.isHardwareDetected()){
-                mParaLabel.setText("Fingerprint Scanner not detected");
+                mParaLabel.setText("Scanner d'empreinte digital non détecté.");
             } else if(ContextCompat.checkSelfPermission(this, Manifest.permission.USE_FINGERPRINT) != PackageManager.PERMISSION_GRANTED){
-                mParaLabel.setText("Permission not granted to use Fingerprint Scanner");
+                mParaLabel.setText("Vous n'avez pas les permissions pour utiliser le scanner d'empreinte");
             } else if(!keyguardManager.isKeyguardSecure()){
-                mParaLabel.setText("Add Lock to your Phone in Settings");
+                mParaLabel.setText("Ajouter un verrouillage à votre smartphone");
             } else if(!fingerprintManager.hasEnrolledFingerprints()){
-                mParaLabel.setText("You should add atleast 1 fingerprint to use this feature");
+                mParaLabel.setText("Vous devez enregistrer au moins une empreinte afin d'utiliser l'application");
             } else {
-                mParaLabel.setText("Place your Finger on Scanner to Access the App");
+                mParaLabel.setText("Placer votre doigt sur votre scanner d'empreinte");
                 FingerprintHandler fingerprintHandler = new FingerprintHandler(this);
                 fingerprintHandler.startAuth(fingerprintManager, null); //cryptoObject permet de savoir si une nouvelle empreinte à été ajouté depuis la dernière utilisation
             }
