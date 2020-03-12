@@ -41,6 +41,8 @@ public class AccountCreationActivity extends AppCompatActivity {
 
                 Map<String, Object> data = new HashMap<>();
                 data.put("nomApplication", nomApp);
+                data.put("userID", auth.getCurrentUser().getUid());
+
 
                 String path = nomApp + "_" + auth.getCurrentUser().getUid();
                 db.collection("Applications").document(path).set(data);
