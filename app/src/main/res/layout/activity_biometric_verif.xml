@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BiometricVerifActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/purpleColor">
+
+
+    <TextView
+        android:id="@+id/headerLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="80dp"
+        android:hapticFeedbackEnabled="true"
+        android:text="Vérification d'empreinte digitale"
+        android:textAlignment="center"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:textSize="45px"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/icone" />
+
+    <ImageView
+        android:id="@+id/fingerprintImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        app:srcCompat="@drawable/fingerprint_foreground" />
+
+    <TextView
+        android:id="@+id/paraLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Utilisez votre capteur d'empreinte pour vous identifier"
+        android:textColor="#ffffff"
+        android:textAlignment="center" /><![CDATA[
+
+    />
+
+]]>
+</androidx.appcompat.widget.LinearLayoutCompat>

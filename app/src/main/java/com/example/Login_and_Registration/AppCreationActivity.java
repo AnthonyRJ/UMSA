@@ -14,7 +14,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
-public class AccountCreationActivity extends AppCompatActivity {
+public class AppCreationActivity extends AppCompatActivity {
 
     Button addApp;
     EditText appName;
@@ -25,7 +25,7 @@ public class AccountCreationActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_account_creation);
+        setContentView(R.layout.activity_app_creation);
 
         addApp = (Button) findViewById(R.id.button_createAccount);
         appName = (EditText) findViewById(R.id.editText_appName);
@@ -47,7 +47,7 @@ public class AccountCreationActivity extends AppCompatActivity {
                 String path = nomApp + "_" + auth.getCurrentUser().getUid();
                 db.collection("Applications").document(path).set(data);
 
-                startActivity(new Intent(AccountCreationActivity.this, AccueilActivity.class));
+                startActivity(new Intent(AppCreationActivity.this, AccueilActivity.class));
             }
         });
     }

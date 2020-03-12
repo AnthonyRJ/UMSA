@@ -77,7 +77,7 @@ public class AccueilActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent moveToAccountCreation = new Intent(AccueilActivity.this, AccountCreationActivity.class);
+                Intent moveToAccountCreation = new Intent(AccueilActivity.this, AppCreationActivity.class);
                 startActivity(moveToAccountCreation);
             }
         });
@@ -130,5 +130,11 @@ public class AccueilActivity extends AppCompatActivity {
                         }
                     }
                 });
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(AccueilActivity.this, AccountListActivity.class);
+        startActivity(intent);
     }
 }
