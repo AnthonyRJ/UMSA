@@ -17,15 +17,15 @@
         app:srcCompat="@drawable/default_icon" />
 
     <TextView
-        android:id="@+id/appTitleLab"
+        android:id="@+id/appLogLab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:textStyle="bold"
-        android:text="Nom de l'application" />
+        android:text="Pseudo" />
 
     <TextView
-        android:id="@+id/appTitle"
+        android:id="@+id/appLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="80dp"

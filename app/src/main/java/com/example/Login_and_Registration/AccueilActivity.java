@@ -35,7 +35,8 @@ public class AccueilActivity extends AppCompatActivity {
     FirebaseFirestore db;
     final Handler handler = new Handler();
     private LinearLayout linearLayout;
-    private QueryDocumentSnapshot tmpDocument;
+    private String tmpDocument;
+    private ArrayList<String> allDocUID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -113,13 +114,14 @@ public class AccueilActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Button button = new Button(context);
-                                tmpDocument = document;
+                                tmpDocument = document.getId();
                                 button.setText("" + document.get("nomApplication"));
                                 button.setOnClickListener(new View.OnClickListener(){
                                     @Override
                                     public void onClick(View v) {
+                                        Button b = (Button) v;
                                         Intent intent = new Intent( AccueilActivity.this , AccountListActivity.class);
-                                        intent.putExtra("IdApplication", tmpDocument.getId());
+                                        intent.putExtra("IdApplication", b.getText());
                                         startActivity(intent);
                                     }
                                 });
