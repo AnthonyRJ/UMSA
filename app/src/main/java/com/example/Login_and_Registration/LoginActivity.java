@@ -104,4 +104,9 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         fireBaseBD.addAuthStateListener(StateListener);
     }
+
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 }

@@ -102,4 +102,9 @@ public class AccueilActivity extends AppCompatActivity {
             }
         });
     }
+
+    @Override
+    public void onBackPressed() {
+        return;
+    }
 }

@@ -4,6 +4,7 @@
     package="com.example.Login_and_Registration">
 
     <uses-permission android:name="android.permission.USE_FINGERPRINT" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/umsa_icon"
@@ -11,23 +12,33 @@
         android:roundIcon="@drawable/umsa_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".BiometricVerifActivity" android:screenOrientation="portrait"
+        <activity android:name=".LogInfoActivity"></activity>
+        <activity
+            android:name=".BiometricVerifActivity"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        <activity android:name=".AccountCreationActivity" android:screenOrientation="portrait"
+        <activity
+            android:name=".AccountCreationActivity"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name=".AccueilActivity" android:screenOrientation="portrait"
+        <activity
+            android:name=".AccueilActivity"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name=".RegistrationActivity" android:screenOrientation="portrait"
+        <activity
+            android:name=".RegistrationActivity"
+            android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
-        <activity android:name=".LoginActivity" android:screenOrientation="portrait"
-            tools:ignore="LockedOrientationActivity">
-        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity"></activity>
     </application>
 
 </manifest>

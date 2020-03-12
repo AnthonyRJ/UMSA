@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.Login_and_Registration.LogInfoActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@color/purpleColor">
+
+    <ImageView
+        android:id="@+id/appIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_margin="80dp"
+        app:srcCompat="@drawable/default_icon" />
+
+    <TextView
+        android:id="@+id/appTitleLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:text="Nom de l'application" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="userApp" />
+
+    <TextView
+        android:id="@+id/appPasswordLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textStyle="bold"
+        android:text="Mot de passe" />
+
+    <TextView
+        android:id="@+id/appPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="80dp"
+        android:text="userAppPassword" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>
