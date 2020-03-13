@@ -28,6 +28,7 @@
         android:hint="@string/newAppliName"
         android:background="#ffffff"
         android:textAlignment="center"
+        android:textColorHint="@color/pinkBackground"
         android:textColor="@color/purpleColor">
     </EditText>
 

@@ -25,6 +25,7 @@
         android:inputType="textEmailAddress"
         android:background="#ffffff"
         android:textAlignment="center"
+        android:textColorHint="@color/pinkBackground"
         android:textColor="@color/purpleColor"/>
 
     <EditText
@@ -36,6 +37,7 @@
         android:background="#ffffff"
         android:inputType="textPassword"
         android:textAlignment="center"
+        android:textColorHint="@color/pinkBackground"
         android:textColor="@color/purpleColor"/>
     
     <Button

@@ -15,7 +15,7 @@
     <string name="logout">Deconnexion</string>
     <string name="test">test</string>
     <string name="coverNewApp">"Ajout d'une nouvelle application"</string>
-    <string name="newAppliName">nom de l\'appli</string>
+    <string name="newAppliName">NOM DE L\'APPLICATION</string>
     <string name="addNewAppInDatabase">Ajouter une application</string>
     <string name="addAppInData">ajouter</string>
     <string name="reload">actualiser</string>

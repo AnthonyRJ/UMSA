@@ -22,6 +22,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
+import org.w3c.dom.Text;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -40,6 +42,7 @@ public class AccueilActivity extends AppCompatActivity {
     private ArrayList<String> allDocUID;
     int cptApp;
     TextView moreLab;
+    TextView listeLab;
 
 
     @Override
@@ -55,9 +58,11 @@ public class AccueilActivity extends AppCompatActivity {
         ((LinearLayout) linearLayout).removeAllViews();
         moreLab = (TextView) findViewById(R.id.moreLab);
         moreLab.setVisibility(View.INVISIBLE);
+        listeLab = (TextView) findViewById(R.id.listeLab);
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         afficherApp();
+        cptApp = 0;
 
         handler.postDelayed(new Runnable() {
             @Override
@@ -138,6 +143,8 @@ public class AccueilActivity extends AppCompatActivity {
 
                             if(cptApp > 4){
                                 moreLab.setVisibility(View.VISIBLE);
+                            } else if(cptApp <= 0){
+                                listeLab.setText("Vous n'avez aucune application enregistrée");
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
