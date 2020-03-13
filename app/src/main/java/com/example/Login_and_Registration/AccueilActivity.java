@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -37,6 +38,9 @@ public class AccueilActivity extends AppCompatActivity {
     private LinearLayout linearLayout;
     private String tmpDocument;
     private ArrayList<String> allDocUID;
+    int cptApp;
+    TextView moreLab;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +53,8 @@ public class AccueilActivity extends AppCompatActivity {
         apps = (ScrollView) findViewById(R.id.scrollView_app);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         ((LinearLayout) linearLayout).removeAllViews();
+        moreLab = (TextView) findViewById(R.id.moreLab);
+        moreLab.setVisibility(View.INVISIBLE);
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
         afficherApp();
@@ -111,8 +117,13 @@ public class AccueilActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
                                 Button button = new Button(context);
+                                cptApp++;
                                 tmpDocument = document.getId();
                                 button.setText("" + document.get("nomApplication"));
+                                button.setBackground(getDrawable(R.drawable.button));
+                                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, LinearLayout.LayoutParams.MATCH_PARENT);
+                                lp.setMargins(0,10,0,10);
+                                button.setLayoutParams(lp);
                                 button.setOnClickListener(new View.OnClickListener(){
                                     @Override
                                     public void onClick(View v) {
@@ -123,6 +134,10 @@ public class AccueilActivity extends AppCompatActivity {
                                     }
                                 });
                                 linearLayout.addView(button);
+                            }
+
+                            if(cptApp > 4){
+                                moreLab.setVisibility(View.VISIBLE);
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());

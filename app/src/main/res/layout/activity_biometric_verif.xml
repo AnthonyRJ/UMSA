@@ -12,7 +12,7 @@
         android:id="@+id/headerLab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="80dp"
+        android:layout_margin="60dp"
         android:hapticFeedbackEnabled="true"
         android:text="Vérification d'empreinte digitale"
         android:textAlignment="center"
@@ -30,7 +30,7 @@
         android:id="@+id/fingerprintImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="50dp"
         app:srcCompat="@drawable/fingerprint_foreground" />
 
     <TextView

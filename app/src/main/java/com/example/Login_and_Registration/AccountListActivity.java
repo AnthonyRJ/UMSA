@@ -81,8 +81,8 @@ public class AccountListActivity extends AppCompatActivity {
                                 b.setOnClickListener(new CustomAccountOnClickListener(logTmp, passTmp, appName, AccountListActivity.this));
                                 b.setText((String) ds.get("Pseudo"));
                                 b.setBackground(getDrawable(R.drawable.button));
-                                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
-                                lp.setMargins(4,4,4,4);
+                                LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
+                                lp.setMargins(30,15,30, 15);
                                 b.setLayoutParams(lp);
                                 ll.addView(b);
                             }

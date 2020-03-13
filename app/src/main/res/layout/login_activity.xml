@@ -11,10 +11,10 @@
     android:background="@drawable/background">
 
     <ImageView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+        android:layout_width="248dp"
+        android:layout_height="185dp"
         android:layout_margin="30dp"
-        app:srcCompat="@drawable/icone"/>
+        app:srcCompat="@drawable/icone" />
 
     <EditText
         android:id="@+id/editText_email"
