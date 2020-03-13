@@ -17,10 +17,12 @@
 
     <EditText
         android:id="@+id/editText_emailRegister"
-        android:layout_width="295dp"
+        android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_marginTop="50dp"
         android:background="#ffffff"
+        android:textColor="@color/purpleColor"
+        android:textColorHint="@color/pinkBackground"
         android:hint="@string/email"
         android:inputType="textEmailAddress"
         android:textAlignment="center" />
@@ -31,6 +33,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#ffffff"
+        android:textColor="@color/purpleColor"
+        android:textColorHint="@color/pinkBackground"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textAlignment="center" />
@@ -41,6 +45,8 @@
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
         android:background="#ffffff"
+        android:textColor="@color/purpleColor"
+        android:textColorHint="@color/pinkBackground"
         android:hint="@string/confirmPassword"
         android:inputType="textPassword"
         android:textAlignment="center" />

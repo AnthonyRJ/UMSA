@@ -38,13 +38,14 @@ public class AccountListActivity extends AppCompatActivity {
     String logTmp;
     String passTmp;
     TextView label;
+    Intent i;
     boolean thereIsAccount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_account_list);
-        Intent i = getIntent();
+        i = getIntent();
         img = (ImageView) findViewById(R.id.appIcon);
         appName = i.getStringExtra("IdApplication");
         db = FirebaseFirestore.getInstance();
@@ -90,17 +91,22 @@ public class AccountListActivity extends AppCompatActivity {
                     }
                     if(!thereIsAccount){
                         label.setText("Vous n'avez pas de comptes associés à cette application.");
-                        Button b = new Button(context);
-                        b.setText("Ajouter un compte à cette application");
-                        b.setOnClickListener(new View.OnClickListener() {
-                            @Override
-                            public void onClick(View v) {
-                                //Intent vers le formulaire d'ajout de compte;
-                            }
-                        });
-                        b.setBackground(getDrawable(R.drawable.button));
-                        ll.addView(b);
                     }
+
+                    Button b = new Button(context);
+                    b.setText("Ajouter un compte");
+                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
+                    lp.setMargins(30,250,30, 15);
+                    b.setLayoutParams(lp);
+                    b.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(AccountListActivity.this, CreateAccountActivity.class);
+                            intent.putExtra("IdApplication", i.getStringExtra("IdApplication"));
+                        }
+                    });
+                    b.setBackground(getDrawable(R.drawable.button));
+                    ll.addView(b);
                 }
             }
         });
