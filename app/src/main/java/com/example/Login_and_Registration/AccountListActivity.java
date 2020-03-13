@@ -73,19 +73,7 @@ public class AccountListActivity extends AppCompatActivity {
                                 logTmp = (String) ds.get("Pseudo");
                                 passTmp = (String) ds.get("mdp");
                                 Button b = new Button(context);
-                                b.setOnClickListener(new View.OnClickListener() {
-                                    @Override
-                                    public void onClick(View v) {
-                                        Intent intent = new Intent(AccountListActivity.this, LogInfoActivity.class);
-                                        String log = logTmp;
-                                        String pass = passTmp;
-                                        String app = appName;
-                                        intent.putExtra("Pseudo", log);
-                                        intent.putExtra("mdp", pass);
-                                        intent.putExtra("AppUID", app);
-                                        startActivity(intent);
-                                    }
-                                });
+                                b.setOnClickListener(new CustomAccountOnClickListener(logTmp, passTmp, appName, AccountListActivity.this));
                                 b.setText((String) ds.get("Pseudo") + "//" + AppNameTested + appName);
                                 ll.addView(b);
                             }
