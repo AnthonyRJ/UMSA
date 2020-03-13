@@ -51,7 +51,7 @@ public class AccueilActivity extends AppCompatActivity {
         ((LinearLayout) linearLayout).removeAllViews();
         firebaseAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-
+        afficherApp();
 
         handler.postDelayed(new Runnable() {
             @Override
