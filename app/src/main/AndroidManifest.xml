@@ -12,7 +12,8 @@
         android:roundIcon="@drawable/icone"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".AccountListActivity"></activity>
+        <activity android:name=".CreateAccountActivity"></activity>
+        <activity android:name=".AccountListActivity" />
         <activity android:name=".LogInfoActivity" />
         <activity
             android:name=".BiometricVerifActivity"
