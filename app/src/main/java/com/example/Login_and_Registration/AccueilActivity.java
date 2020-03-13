@@ -145,6 +145,7 @@ public class AccueilActivity extends AppCompatActivity {
                                 moreLab.setVisibility(View.VISIBLE);
                             } else if(cptApp <= 0){
                                 listeLab.setText("Vous n'avez aucune application enregistrée");
+                                listeLab.setTextSize(14);
                             }
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
