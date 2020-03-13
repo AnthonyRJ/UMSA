@@ -103,6 +103,7 @@ public class AccountListActivity extends AppCompatActivity {
                         public void onClick(View v) {
                             Intent intent = new Intent(AccountListActivity.this, CreateAccountActivity.class);
                             intent.putExtra("IdApplication", i.getStringExtra("IdApplication"));
+                            startActivity(intent);
                         }
                     });
                     b.setBackground(getDrawable(R.drawable.button));
