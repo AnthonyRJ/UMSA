@@ -7,9 +7,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/umsa_icon"
+        android:icon="@drawable/icone"
         android:label="@string/app_name"
-        android:roundIcon="@drawable/umsa_icon"
+        android:roundIcon="@drawable/icone"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
         <activity android:name=".AccountListActivity"></activity>

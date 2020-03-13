@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     tools:context="com.example.Login_and_Registration.AppCreationActivity"
-    android:background="@color/purpleColor">
+    android:background="@drawable/background">
 
     <TextView
         android:id="@+id/textView"
@@ -37,6 +37,7 @@
         android:layout_height="40dp"
         android:textSize="15sp"
         android:layout_marginTop="50dp"
+        android:background="@drawable/button"
         android:text="@string/addAppInData" />
 
 </LinearLayout>

@@ -7,11 +7,12 @@
     tools:context="com.example.Login_and_Registration.RegistrationActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/purpleColor">
+    android:background="@drawable/background">
 
     <ImageView
         android:layout_width="205dp"
         android:layout_height="190dp"
+        android:layout_margin="20dp"
         app:srcCompat="@drawable/icone" />
 
     <EditText
@@ -54,6 +55,7 @@
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginTop="40dp"
+        android:background="@drawable/button"
         android:text="S'inscrire" />
 
     <TextView

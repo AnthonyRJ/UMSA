@@ -95,9 +95,6 @@ public class AccueilActivity extends AppCompatActivity {
     }
 
     public void afficherApp(){
-
-
-
         ScrollView sv = (ScrollView) findViewById(R.id.scrollView_app);
         final Context context = this;
 
@@ -136,7 +133,6 @@ public class AccueilActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        Intent intent = new Intent(AccueilActivity.this, AccountListActivity.class);
-        startActivity(intent);
+        return; //On empêche le retour au formulaire de connexion par le bouton back
     }
 }

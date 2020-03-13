@@ -8,11 +8,12 @@
 
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@color/purpleColor">
+    android:background="@drawable/background">
 
     <ImageView
         android:layout_width="300dp"
         android:layout_height="300dp"
+        android:layout_margin="30dp"
         app:srcCompat="@drawable/icone"/>
 
     <EditText
@@ -42,6 +43,7 @@
         android:layout_width="180dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
+        android:background="@drawable/button"
         android:text="@string/Connect"/>
 
     <LinearLayout
