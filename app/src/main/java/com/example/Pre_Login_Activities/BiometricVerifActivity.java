@@ -1,17 +1,18 @@
-package com.example.Login_and_Registration;
+package com.example.Pre_Login_Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.Manifest;
 import android.app.KeyguardManager;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.fingerprint.FingerprintManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.example.Login_and_Registration.R;
 
 public class BiometricVerifActivity extends AppCompatActivity {
 

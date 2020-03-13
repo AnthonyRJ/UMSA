@@ -1,4 +1,4 @@
-package com.example.Login_and_Registration;
+package com.example.Accueil;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,25 +14,24 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.Account.AccountListActivity;
+import com.example.Application.AppCreationActivity;
+import com.example.Login_and_Registration.LoginActivity;
+import com.example.Login_and_Registration.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class AccueilActivity extends AppCompatActivity {
     Button logout;
     Button createApp;
-    Button reload;
     ScrollView apps;
     FirebaseAuth firebaseAuth;
     FirebaseFirestore db;
@@ -52,7 +51,6 @@ public class AccueilActivity extends AppCompatActivity {
 
         logout = (Button) findViewById(R.id.button_loggout);
         createApp = (Button) findViewById(R.id.button_createApp);
-        reload = (Button) findViewById(R.id.button_reload);
         apps = (ScrollView) findViewById(R.id.scrollView_app);
         linearLayout = (LinearLayout) findViewById(R.id.linearLayout);
         ((LinearLayout) linearLayout).removeAllViews();
@@ -76,14 +74,6 @@ public class AccueilActivity extends AppCompatActivity {
                 }
             }
         }, 1000);
-
-        reload.setOnClickListener(new View.OnClickListener(){
-
-            @Override
-            public void onClick(View v) {
-                afficherApp();
-            }
-        });
 
         createApp.setOnClickListener(new View.OnClickListener(){
 

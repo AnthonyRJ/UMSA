@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.Login_and_Registration.AccueilActivity"
+    tools:context="com.example.Login_and_Registration.com.example.Accueil.AccueilActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:background="@drawable/background"
@@ -55,19 +55,10 @@
         android:text=" ... plus d'applications" />
 
     <Button
-        android:id="@+id/button_reload"
-        android:layout_width="250dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="45dp"
-        android:background="@drawable/button"
-        android:text="@string/reload"
-        android:textSize="15sp" />
-
-    <Button
         android:id="@+id/button_createApp"
         android:layout_width="250dp"
         android:layout_height="40dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="90dp"
         android:text="@string/addNewAppInDatabase"
         android:background="@drawable/button"
         android:textSize="15sp" />

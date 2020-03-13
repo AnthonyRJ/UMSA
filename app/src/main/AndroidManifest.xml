@@ -12,11 +12,11 @@
         android:roundIcon="@drawable/icone"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".CreateAccountActivity"></activity>
-        <activity android:name=".AccountListActivity" />
-        <activity android:name=".LogInfoActivity" />
+        <activity android:name="com.example.Account.CreateAccountActivity"></activity>
+        <activity android:name="com.example.Account.AccountListActivity" />
+        <activity android:name="com.example.Account.LogInfoActivity" />
         <activity
-            android:name=".BiometricVerifActivity"
+            android:name="com.example.Pre_Login_Activities.BiometricVerifActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity">
             <intent-filter>
@@ -26,11 +26,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppCreationActivity"
+            android:name="com.example.Application.AppCreationActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity
-            android:name=".AccueilActivity"
+            android:name="com.example.Accueil.AccueilActivity"
             android:screenOrientation="portrait"
             tools:ignore="LockedOrientationActivity" />
         <activity

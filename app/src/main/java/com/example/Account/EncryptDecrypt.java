@@ -1,4 +1,4 @@
-package com.example.Login_and_Registration;
+package com.example.Account;
 
 import android.util.Base64;
 

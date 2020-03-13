@@ -1,14 +1,11 @@
-package com.example.Login_and_Registration;
+package com.example.Account;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -17,16 +14,14 @@ import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
+import com.example.Accueil.AccueilActivity;
+import com.example.Login_and_Registration.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class AccountListActivity extends AppCompatActivity {
 
@@ -109,8 +104,8 @@ public class AccountListActivity extends AppCompatActivity {
                             }
                         }
                     }
-                    if(!thereIsAccount){
-                        label.setText("Vous n'avez pas de comptes associés à cette application.");
+                    if(thereIsAccount){
+                        label.setText("Liste de vos comptes associées");
                     }
                 }
             }

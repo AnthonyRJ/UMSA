@@ -1,4 +1,4 @@
-package com.example.Login_and_Registration;
+package com.example.Pre_Login_Activities;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import androidx.annotation.RequiresApi;
 import androidx.core.content.ContextCompat;
+
+import com.example.Login_and_Registration.LoginActivity;
+import com.example.Login_and_Registration.R;
 
 @RequiresApi(api = Build.VERSION_CODES.M)
 public class FingerprintHandler extends FingerprintManager.AuthenticationCallback{
