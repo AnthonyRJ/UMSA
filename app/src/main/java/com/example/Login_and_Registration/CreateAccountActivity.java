@@ -47,7 +47,11 @@ public class CreateAccountActivity extends AppCompatActivity {
                 Map<String, Object> data = new HashMap<>();
                 data.put("Applications", IdApp);
                 data.put("Pseudo", name);
-                data.put("mdp",mdp);
+                try {
+                    data.put("mdp", EncryptDecrypt.encrypt(mdp));
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
                 data.put("userID", id);
 
                 db.collection("Comptes").add(data);

@@ -24,7 +24,11 @@ public class LogInfoActivity extends AppCompatActivity {
         pass = (TextView) findViewById(R.id.appPassword);
 
         log.setText(intent.getStringExtra("Pseudo"));
-        pass.setText(intent.getStringExtra("mdp"));
+        try {
+            pass.setText(EncryptDecrypt.decrypt(intent.getStringExtra("mdp")));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void changeIcon(String appName){
