@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -32,6 +33,8 @@ public class AccountListActivity extends AppCompatActivity {
     FirebaseFirestore db;
     FirebaseAuth auth;
     Context context = this;
+    RelativeLayout rl;
+    ScrollView sv;
     LinearLayout ll;
     ImageView img;
     String appName;
@@ -48,13 +51,29 @@ public class AccountListActivity extends AppCompatActivity {
         i = getIntent();
         img = (ImageView) findViewById(R.id.appIcon);
         appName = i.getStringExtra("IdApplication");
+        Button b = findViewById(R.id.createAccountButton);
         db = FirebaseFirestore.getInstance();
         label = findViewById(R.id.AppTitle);
-        ll = (LinearLayout) findViewById(R.id.ll);
+        ll = findViewById(R.id.ll);
+        sv = (ScrollView) ll.getParent();
+        rl = (RelativeLayout) sv.getParent();
+        sv.removeView(ll);
+        sv.addView(ll);
+        rl.removeView(sv);
+
+        b.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent moveToCreateAccount = new Intent(AccountListActivity.this, CreateAccountActivity.class);
+                moveToCreateAccount.putExtra("IdApplication", i.getStringExtra("IdApplication"));
+                startActivity(moveToCreateAccount);
+            }
+        });
         auth = FirebaseAuth.getInstance();
         changeIcon(appName.toLowerCase());
         thereIsAccount = false;
         getAccountLinked();
+        rl.addView(sv);
     }
 
     public void getAccountLinked(){
@@ -76,10 +95,11 @@ public class AccountListActivity extends AppCompatActivity {
 
                                 logTmp = (String) ds.get("Pseudo");
                                 passTmp = (String) ds.get("mdp");
+                                String docRef = ds.getReference().getId();
                                 Button b = new Button(context);
                                 b.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                                 b.setWidth(LinearLayout.LayoutParams.MATCH_PARENT);
-                                b.setOnClickListener(new CustomAccountOnClickListener(logTmp, passTmp, appName, AccountListActivity.this));
+                                b.setOnClickListener(new CustomAccountOnClickListener(logTmp, passTmp, appName,docRef,AccountListActivity.this));
                                 b.setText((String) ds.get("Pseudo"));
                                 b.setBackground(getDrawable(R.drawable.button));
                                 LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
@@ -92,22 +112,6 @@ public class AccountListActivity extends AppCompatActivity {
                     if(!thereIsAccount){
                         label.setText("Vous n'avez pas de comptes associés à cette application.");
                     }
-
-                    Button b = new Button(context);
-                    b.setText("Ajouter un compte");
-                    LinearLayout.LayoutParams lp = new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT, 200);
-                    lp.setMargins(30,250,30, 15);
-                    b.setLayoutParams(lp);
-                    b.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Intent intent = new Intent(AccountListActivity.this, CreateAccountActivity.class);
-                            intent.putExtra("IdApplication", i.getStringExtra("IdApplication"));
-                            startActivity(intent);
-                        }
-                    });
-                    b.setBackground(getDrawable(R.drawable.button));
-                    ll.addView(b);
                 }
             }
         });
@@ -159,5 +163,11 @@ public class AccountListActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent moveToAccueil = new Intent(AccountListActivity.this, AccueilActivity.class);
+        startActivity(moveToAccueil);
     }
 }

@@ -37,12 +37,12 @@
         android:layout_width="295dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:hint="@string/password"
-        android:textColorHint="@color/pinkBackground"
         android:background="#ffffff"
+        android:hint="@string/password"
+        android:inputType="textPassword"
         android:textAlignment="center"
-        android:textColor="@color/purpleColor">
-    </EditText>
+        android:textColor="@color/purpleColor"
+        android:textColorHint="@color/pinkBackground"></EditText>
 
     <Button
         android:id="@+id/button_createAccount2"

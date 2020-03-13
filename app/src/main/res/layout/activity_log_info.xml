@@ -46,4 +46,11 @@
         android:layout_marginBottom="80dp"
         android:text="userAppPassword" />
 
+    <Button
+        android:id="@+id/delButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Supprimer ce compte"
+        android:background="@drawable/button"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>

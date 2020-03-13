@@ -19,6 +19,6 @@
     <string name="addNewAppInDatabase">Ajouter une application</string>
     <string name="addAppInData">ajouter</string>
     <string name="reload">actualiser</string>
-    <string name="nameAccount">nom du compte</string>
+    <string name="nameAccount">NOM DU COMPTE</string>
 
 </resources>

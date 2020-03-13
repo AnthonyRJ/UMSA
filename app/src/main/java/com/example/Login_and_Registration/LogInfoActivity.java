@@ -4,24 +4,48 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 
 public class LogInfoActivity extends AppCompatActivity {
 
     TextView log;
     TextView pass;
     ImageView img;
+    FirebaseFirestore db;
+    DocumentSnapshot ds;
+    String IdApplication;
+    String DocumentRef;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        db = FirebaseFirestore.getInstance();
         setContentView(R.layout.activity_log_info);
         Intent intent = getIntent();
         img = (ImageView) findViewById(R.id.appIcon);
-        String[] AppUID = intent.getStringExtra("AppUID").split("_");
+        IdApplication = intent.getStringExtra("AppUID");
+        DocumentRef = intent.getStringExtra("DocRef");
+        String[] AppUID = IdApplication.split("_");
         changeIcon(AppUID[0]);
         log = (TextView) findViewById(R.id.appLog);
         pass = (TextView) findViewById(R.id.appPassword);
+        Button delButton = (Button) findViewById(R.id.delButton);
+        delButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                db.collection("Comptes").document(DocumentRef).delete();
+                Intent moveToAccountList = new Intent(LogInfoActivity.this, AccountListActivity.class);
+                moveToAccountList.putExtra("IdApplication", IdApplication);
+                startActivity(moveToAccountList);
+            }
+        });
 
         log.setText(intent.getStringExtra("Pseudo"));
         try {
